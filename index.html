@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NASA APOD Explorer</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="stye.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-dark bg-dark">
+      <div class="container">
+        <span class="navbar-brand mb-0 h1">NASA APOD Explorer</span>
+      </div>
+    </nav>
+
+    <main class="container my-4">
+      <section class="text-center mb-4">
+        <h1>Astronomy Picture of the Day</h1>
+        <p class="text-muted">
+          Explora imágenes astronómicas de la NASA y guarda tus favoritas.
+        </p>
+      </section>
+
+      <section class="card p-3 mb-4 shadow-sm">
+        <div class="row g-2 align-items-end">
+          <div class="col-md-8">
+            <label for="fecha" class="form-label">Selecciona una fecha</label>
+            <input type="date" id="fecha" class="form-control" />
+          </div>
+
+          <div class="col-md-4">
+            <button id="btnBuscar" class="btn btn-primary w-100">
+              Buscar APOD
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <div id="mensaje" class="alert d-none"></div>
+
+      <section id="apodContainer" class="card shadow-sm mb-4 d-none">
+        <div class="card-body">
+          <h2 id="titulo" class="card-title"></h2>
+          <p id="fechaApod" class="text-muted"></p>
+
+          <div id="mediaContainer" class="text-center my-3"></div>
+
+          <p id="explicacion" class="card-text"></p>
+
+          <button id="btnFavorito" class="btn btn-warning">
+            Guardar en favoritos
+          </button>
+        </div>
+      </section>
+
+      <section class="card shadow-sm">
+        <div class="card-body">
+          <h3>Favoritos guardados</h3>
+          <p class="text-muted">
+            Haz clic en un favorito para cargar esa APOD.
+          </p>
+
+          <ul id="listaFavoritos" class="list-group"></ul>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
